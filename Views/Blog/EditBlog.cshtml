@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Blog 
+@{
+    ViewData["Title"] = "EditBlog";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+@section script{
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("editorid");
+    </script>
+}
+
+<h1>Blog Düzenleme sayfası</h1>
+<form asp-action="EditBlog" asp-controller="Blog" method="post">
+    @Html.Label("Blog ID")
+    @Html.TextBoxFor(x => x.BlogId, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog Başlığı")
+    @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog Thumbnail Url")
+    @Html.TextBoxFor(x => x.BlogThumbnailImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog Görseli")
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog Kategori")
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog İçeriği")
+    @Html.TextAreaFor(x => x.BlogContent, 10, 3, new { @class = "form-control", @id="editorid" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
+

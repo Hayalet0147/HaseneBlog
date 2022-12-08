@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.Catch
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>admin sohnet oluştur</h1>
+<h1>Yeni Sohbet Girişi</h1>
+<form asp-controller="AdminCatch" asp-action="Index" method="post">
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+    <br />
+    @Html.Label("Konu Başlığı")
+    @Html.TextBoxFor(x => x.CatchTitle, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("kısa açıklama")
+    @Html.TextAreaFor(x => x.sohbetaciklamasi, 15, 3, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

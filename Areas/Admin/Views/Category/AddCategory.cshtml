@@ -1,0 +1,20 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model EntityLayer.Concrete.Category
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Kategori Girişi</h1>
+<form asp-action="AddCategory" asp-controller="Category" method="post">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.CategorName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategorName, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Kategori İçeriği")
+    @Html.TextAreaFor(x => x.CategoryDescription, 15, 3, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryDescription, "", new { @class = "text-danger" })
+    <br />
+    <button class="btn btn-info">Verileri Kaydet</button>
+</form>
+

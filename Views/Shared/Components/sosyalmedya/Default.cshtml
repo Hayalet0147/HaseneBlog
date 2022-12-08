@@ -1,0 +1,112 @@
+﻿@model List<EntityLayer.Concrete.Blog>
+
+@*<div class="tech-btm widget_social">*@
+@*<h4>Yazarımızla İletişime Geçin</h4>*@
+
+<ul>
+    @foreach (var item in Model)
+    {
+        if (@item.Writers.Email != null)
+        {
+            <li>
+                <a class="google1" href="mailto:@item.Writers.Email">
+                    <i class="fab fa-google"></i>
+                    <span class="count">317K</span> E-Posta
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.PhoneNumber != null)
+        {
+            <li>
+                <a class="whats" href="https://wa.me/@item.Writers.PhoneNumber" rel="nofollow" target="_blank">
+                    <i class="fab fa-whatsapp"></i> @*href="https://wa.me/905550534577"*@
+                    <span class="count">218k</span> Whatsapp
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Youtube != null)
+        {
+            <li>
+                <a class="pin" href="@item.Writers.Youtube">
+                    <i class="fab fa-youtube"></i>
+
+                    <span class="count">215k</span> Youtube Hesabı
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Github != null)
+        {
+            <li>
+                <a class="github" href="@item.Writers.Github">
+                    <i class="fab fa-github"></i>
+                    <span class="count">190k</span> Github
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Instagram != null)
+        {
+            <li>
+                <a class="dribble3" href="@item.Writers.Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span class="count">190k</span> Instagram
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Facebook != null)
+        {
+            <li>
+                <a class="facebook" href="@item.Writers.Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="count">218k</span> Facebook Hesabı
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Tweteer != null)
+        {
+            <li>
+                <a class="twitter" href="@item.Writers.Tweteer">
+                    <i class="fab fa-twitter"></i>
+                    <span class="count">317K</span> Twitter Hesabı
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Discord != null)
+        {
+            <li>
+                <a class="discord" href="@item.Writers.Discord">
+                    <i class="fab fa-discord"></i>
+                    <span class="count">190k</span> Discord
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Linkedin != null)
+        {
+            <li>
+                <a class="linked" href="@item.Writers.Linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="count">190k</span> Linkedin
+                </a>
+            </li>
+        }
+
+        if (@item.Writers.Twitch != null)
+        {
+            <li>
+                <a class="twitch" href="@item.Writers.Twitch">
+                    <i class="fab fa-twitch"></i>
+                    <span class="count">190k</span> Twitch
+                </a>
+            </li>
+        }
+    }
+</ul>
+
+@*</div>*@

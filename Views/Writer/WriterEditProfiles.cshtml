@@ -1,0 +1,98 @@
+﻿@model UserUpdateViewModel
+@{
+    ViewData["Title"] = "WriterEditProfiles";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yazar Profil Sayfası</h4>
+            <br />
+            <br />
+            <form class="forms-sample" method="post" enctype="multipart/form-data" asp-action="WriterEditProfiles" asp-controller="Writer">
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Adı Soyadı</label>
+                    <input type="text" class="form-control" asp-for="@Model.namesurname" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Kullnıcı Adı</label>
+                    <input type="text" class="form-control" asp-for="@Model.username" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">E-posta Adresi</label>
+                    <input type="email" class="form-control" asp-for="@Model.mail" />
+                </div>
+
+                <div class="form-group">
+                    <label>Yazar Görseli</label>
+                    <input type="text" name="img[]" class="file-upload-default" disabled />
+                    <div class="input-group col-xs-12">
+                        <input type="file" asp-for="@Model.imageurl" class="form-control" />
+                        <span class="input-group-btn">
+                            <button type="button" class="file-upload-browse btn btn-gradient-primary">Resim Seç</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Telefon Numarası</label>
+                    <input type="text" asp-for="@Model.PhoneNumber" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Github Hesabı</label>
+                    <input type="text" asp-for="@Model.Github" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4"> Instagram Hesabı </label>
+                    <input type="url" asp-for="@Model.Instagram" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword4"> Linkedin Hesabı </label>
+                    <input type="url" asp-for="@Model.Linkedin" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword4"> YouTube Hesabı </label>
+                    <input type="url" asp-for="@Model.Youtube" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword4"> Facebook Hesabı </label>
+                    <input type="url" asp-for="@Model.Facebook" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword4"> WeChat Hesabı </label>
+                    <input type="url" asp-for="@Model.WeChat" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="mb-0"> Tweteer Hesabı </label>
+                    <input type="url" asp-for="@Model.Tweteer" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="mb-0"> Discord Hesabı </label>
+                    <input type="url" asp-for="@Model.Discord" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="mb-0"> Twitch Hesabı </label>
+                    <input type="url" asp-for="@Model.Twitch" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Yeni şifre</label>
+                    <input type="password" asp-for="@Model.password" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Hakkımda </label>
+                    @Html.TextAreaFor(x => x.userabout, 10, 3, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+                <button asp-action="Index" asp-controller="Dashboard" class="btn btn-light">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>

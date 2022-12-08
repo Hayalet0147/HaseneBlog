@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+               
+
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div style="height:255px; width:283px;">
+                                @*div'in boyutunu geçici olarak ekliyorum*@
+                            <img src="@item.ImageUrl" style="height:255px;width:325px;" />
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                                Yazar
+                            </span>
+                            <small class="text-muted">@item.NameSurname</small>
+                            <a href="#" class="product-name"> @item.UserName </a>
+                            <small class="text-muted"><pre>@item.PasswordHash</pre></small>
+                            @if(item.UserAbout != null)
+                            {
+                            <div class="small m-t-xs">
+                                <pre>@item.UserAbout ... </pre>
+                            </div>
+                            }
+                            else
+                            {
+                                <p>Bu yzarın hakkında kısmı boş</p>
+                            }
+                            <div class="m-t text-righ">
+
+                                <a href="/Dashboard/Index/@item.Id/" class="btn btn-xs btn-outline btn-primary">Detaylar <i class="fa fa-long-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+</body>
+
+</html>

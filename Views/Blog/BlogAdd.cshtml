@@ -1,0 +1,61 @@
+﻿@model EntityLayer.Concrete.Blog
+@*@model BlogAddViewModel*@
+
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+@section script{
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("editorid");
+    </script>
+}
+
+    @* <link href="css/plugins/summernote/summernote-bs4.css" rel="stylesheet">
+
+    <!-- SUMMERNOTE -->
+    <script src="js/plugins/summernote/summernote-bs4.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('.summernote').summernote();
+
+        });
+
+    </script>*@
+
+    <h1>Yeni Blog Girişi</h1>
+    <form asp-controller="Blog" asp-action="BlogAdd" method="post" enctype="multipart/form-data">
+
+        @Html.Label("Blog Başlığı")
+        <input asp-for="BlogTitle" class="form-control" />
+        <span class="badge badge-danger" asp-validation-for="BlogTitle"></span>
+        @*  @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogTitle, "", new { @class = "text-danger" })*@
+        <br />
+        <div class="form-group">
+            <label>Blog Görseli</label>
+            <input type="url" name="Image" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Blog küçük Görseli</label>
+            <input type="url" name="BlogThumbnailImage" class="form-control" />
+        </div>
+        <br />
+        @Html.Label("Blog İçeriği")
+        <br />
+        <textarea asp-for="BlogContent" id="editorid" class="form-control" rows="15" cols="142"></textarea>
+        <span class="badge badge-danger" asp-validation-for="BlogContent"></span>
+        @*@Html.TextAreaFor(x => x.BlogContent, 15, 3, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })*@
+        <br />
+        @Html.Label("Kategori")
+         @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+
+    </form>

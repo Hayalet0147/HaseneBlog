@@ -1,0 +1,64 @@
+﻿ @foreach (var item in Model)
+    {
+
+        TimeSpan zaman = now.Subtract(item.CatchDate);
+
+        if (zaman.Days == 0)
+        {
+            if (zaman.Minutes == 0 && zaman.Hours == 0)
+            {
+                sure = " Şimdi";
+            }
+            else if (zaman.Minutes > 0 && zaman.Hours == 0)
+            {
+                sure = zaman.Minutes + " Dakika önce";
+            }
+            else
+            {
+                sure = zaman.Hours + " Saat " + zaman.Minutes + " dakika önce";
+            }
+        }
+        else
+        {
+            if (zaman.Hours == 0)
+            {
+                sure = zaman.Days + " Gün önce";
+            }
+            else
+            {
+                sure = zaman.Days + " Gün" + zaman.Hours + "saat önce";
+            }
+        }
+        <div>
+            <div class="chat-activity-list">
+
+                <div class="chat-element">
+                    <a href="#" class="float-left">
+                        <img alt="image" class="rounded-circle" src="@ViewBag.senderuserimg">
+                    </a>
+                    <div class="media-body ">
+                        <small class="float-right text-navy">@sure gönderildi</small>
+                        <strong>@ViewBag.senderusernmae</strong>
+                        <p class="m-b-xs">
+                            @ViewBag.sendermessage
+                        </p>
+                        <small class="text-muted"> @(((DateTime)item.CatchDate).ToString("dd-MMM-yyyy"))</small>
+                    </div>
+                </div>
+
+                <div class="chat-element right">
+                    <a href="#" class="float-right">
+                        <img alt="image" class="rounded-circle" src="@ViewBag.answruserimg">
+                    </a>
+                    <div class="media-body text-right ">
+                        <small class="float-left">@sure gönderildi</small>
+                        <strong>@ViewBag.answerusername</strong>
+                        <p class="m-b-xs">
+                            @ViewBag.answeringmessage
+                        </p>
+                        <small class="text-muted">@(((DateTime)item.CatchDate).ToString("dd-MMM-yyyy"))</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }

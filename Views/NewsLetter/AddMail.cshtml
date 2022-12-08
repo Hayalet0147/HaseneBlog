@@ -1,0 +1,29 @@
+﻿
+<div class="tech-btm">
+    <p>Teknoloji, Yazılım diğer bloglar...</p>
+    <form method="post">
+        <input type="email" id="eposta" placeholder="Email" required="" name="Mail">
+        <input type="submit" id="aboneol" value="Abone Ol" />
+    </form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script type="text/javascript">
+
+    $("#aboneol").click(function () {
+
+        let values = {
+            Mail: $("#eposta").val()
+        };
+        $.ajax({
+            type: "post",
+            url: "/NewsLetter/AddMail/",
+            data: values,
+            success: function (func) {
+                let result = jQuery.parseJSON(func);
+            }
+        });
+    });
+</script>

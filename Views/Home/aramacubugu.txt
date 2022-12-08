@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<EntityLayer.Concrete.Blog> 
+
+<form action="#" method="post" class="form-inline my-2 my-lg-0 header-search">
+    <input class="form-control mr-sm-2" type="search" placeholder="Aranacak Kelime..." name="SearchString" required="">
+    <button class="btn btn1 my-2 my-sm-0" type="submit">
+        <i class="fas fa-search"></i>
+    </button>
+</form>
+

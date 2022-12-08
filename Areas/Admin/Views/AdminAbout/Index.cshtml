@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Hakkında yazısı</h1>
+
+<form asp-action="AdminAbout" asp-controller="Index" method="post">
+    @Html.Label("Hakkında")
+    @Html.TextBoxFor(x => x.AboutId, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hakkında görseli")
+    @Html.TextBoxFor(x => x.AboutImage1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hakkında içeriği")
+    @Html.TextAreaFor(x => x.AboutDetails1, 10, 3, new { @class = "form-control", @id="editorid" })
+    <br />
+    @Html.Label("Hakkında görseli2")
+    @Html.TextBoxFor(x => x.AboutImage2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hakkında içeriği2")
+    @Html.TextAreaFor(x => x.AboutDetails2, 10, 3, new { @class = "form-control", @id="editorid" })
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>

@@ -1,0 +1,22 @@
+﻿@using Tekno_Yazılım.Models
+@model RoleUpdateViewModel
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Role Düzenleme sayfası</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label>Role Id</label>
+        <input type="text" name="Id" value="@Model.Id" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Role Başlığı</label>
+        <input type="text" name="Name" value="@Model.Name" class="form-control" />
+    </div>
+
+    <button class="btn btn-success">Güncelle</button>
+</form>

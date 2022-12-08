@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Notification
+
+@{
+    ViewData["Title"] = "AddNotification";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Bildirim oluştur</h1>
+<form method="post">
+  
+        @Html.Label("Bildirim Resmi")
+        <input type="" asp-for="NotificationTypeSymbol" class="form-control" />
+        <br />
+        @Html.Label("Bildirim Arka Plan Rengi")
+        <input type="text" asp-for="NotificationColor" class="form-control" />
+        <br />
+        @Html.Label("Bildirim Başlığı")
+        <input type="text" asp-for="NotificationType" class="form-control" />
+        <br />
+        @Html.Label("Mesaj İçeriği")
+        <textarea class="form-control" rows="15" cols="3" asp-for="NotificationDetails"></textarea>
+        <br />
+        <br />
+
+        <button type="submit" class="btn btn-info">Gönder</button>
+    
+</form>
+
+<br />
+<p>bildirim resmi için örnek kullanım.
+<small style="color:mediumvioletred;"> "mdi mdi-settings"</small></p>
+<p>Bildirim arka plan rengi için örnek kullanım.
+<small  style="color:mediumvioletred;">"preview-icon bg-warning"</small></p>

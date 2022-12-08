@@ -1,0 +1,33 @@
+﻿@model List<EntityLayer.Concrete.iletisimadresleri>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>İletişim Adresleri listesi</h1>
+
+<table class="table table-hover table-mail">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Telefon</th>
+            <th>Adres</th>
+            <th>E-Posta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="unread">
+                <td>
+                   @item.Id
+                </td>
+                <td>@item.phonenumber</td>
+                <td>@item.adress</td>
+                <td>@item.eposta</td>
+                <td>Düzenle</td>
+            </tr>
+        }
+    </tbody>
+</table>

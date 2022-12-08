@@ -1,0 +1,17 @@
+﻿@model List<EntityLayer.Concrete.About>
+@{
+    ViewData["Title"] = "Hakkinda_listesini_getir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Hakkinda_listesini_getir</h1>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <th>@item.AboutId</th>
+        <td>Hakkında 1</td>
+        <td>Hakkında 2</td>
+        <td><a href="/Admin/AdminAbout/Index/@item.AboutId" class="btn btn-warning">Düzenle</a></td>
+    </tr>
+}

@@ -1,0 +1,71 @@
+﻿@*@model EntityLayer.Concrete.Blog*@
+
+
+
+<div class="form-group">
+    <br />
+    <h3 class="text-primary">Yorum Yaz</h3>
+
+    <div class="comment-top">
+        <form asp-action="PartialAddComment" asp-controller="Comment" method="post">
+            <div class="comment-bottom">
+                <input type="text" class="form-control" name="CommentTitle" placeholder="Başlık Giriniz" required="">
+
+                 <input type="text" class="form-control" name="CommentUserName" placeholder="Adınızı diriniz"@* value="@ViewBag.name"*@ required="">
+
+                <input type="hidden" class="form-control" name="BlogId" placeholder="Blog id" value="@ViewBag.CommentId" required="">
+
+                <textarea class="form-control" name="CommentContent" placeholder="Yorumunuz..." required=""></textarea>
+            </div>
+            <br />
+
+            <button type="submit" class="btn btn-primary submit">Yorum Yap</button>
+        </form>
+
+    </div>
+
+
+</div>
+
+
+
+@*<div class="comment-top">
+
+        action="/Comment/PartialAddComment/"
+        <div class="comment-bottom">
+            <form method="post" asp-action="PartialAddComment" asp-controller="Comment">
+
+                <input class="form-control" id="names" type="text" name="CommentUserName" placeholder="Adınız Soyadınız" required="">
+
+                <input class="form-control" id="konu" type="text"  name="CommentTitle" placeholder="Amaç" required="">
+
+                <textarea class="form-control" id="yorum" name="CommentContent" placeholder="Yorumunuz..." required=""></textarea>
+
+                <button type="submit" id="gonder" class="btn btn-primary submit"  >Gönder</button>
+            </form>
+        </div>
+
+</div>*@
+@*
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" type="text/javascript"></script>*@
+
+@*<script type="text/javascript">
+
+    $("#gonder").click(function () {
+
+        let result = {
+            names: $("#names").val(),
+            konu: $("#konu").val(),
+            yorum: $("#names").val()
+        };
+        $.ajax({
+            type: "post",
+            url: "/Comment/PartialAddComment/",
+            data: result,
+            success: function (func) {
+                let sonuc = jQuery.parseJSON(func);
+            }
+        });
+    });
+</script>*@
+

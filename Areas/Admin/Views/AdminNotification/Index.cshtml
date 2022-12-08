@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<Notification>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Bildirimler</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Bildirim</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.NotificationId </td>
+            <td>@item.NotificationDetails </td>
+            <td>@item.NotificationDate.ToShortDateString()</td>
+            <td><a href="/Admin/AdminNotification/DeleteNotification/@item.NotificationId" class="btn btn-danger" onclick="return confirm('Silmek istediğinize emin misisniz?')">Sil</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a class="btn btn-primary" href="/Admin/AdminNotification/AddNotification/">Bildirim Oluştur</a>
+

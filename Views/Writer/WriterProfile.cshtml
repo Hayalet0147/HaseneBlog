@@ -1,0 +1,279 @@
+﻿@model UserUpdateViewModel
+
+@{
+    ViewData["Title"] = "WriterProfile";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<div class="main-body">
+    <div class="row gutters-sm">
+
+
+        <div class="col-md-4 mb-2">
+
+            @await Component.InvokeAsync("WriterProfile")
+
+
+            <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <a href="@Model.Github">  <h4 class="text-github">  <img src="https://img.icons8.com/nolan/64/github.png" />  Github </h4> </a>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <a href="@Model.Instagram"> <h4 class="text-instagram">  <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" />  Instagram  </h4> </a>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <a href="@Model.Linkedin"> <h4 class="text-linkedin">  <img src="https://img.icons8.com/fluency/48/000000/linkedin.png" />  Linkedin  </h4> </a>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+                        <a href="@Model.Tweteer"> <h4 class="text-tweteer">  <img src="https://img.icons8.com/color/48/000000/tweteer-play.png" />  Twetter  </h4> </a>
+                    </li>
+
+                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+                        <a href="@Model.Facebook"> <h4 class="text-facebook">  <img src="https://img.icons8.com/color/48/000000/facebook-play.png" />  Facebook  </h4> </a>
+                    </li>
+
+                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+                        <a href="@Model.Discord"> <h4 class="text-discord">  <img src="https://img.icons8.com/color/48/000000/discord-play.png" />  Discord  </h4> </a>
+                    </li>
+
+                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+                        <a href="@Model.Youtube"> <h4 class="text-youtube">  <img src="https://img.icons8.com/color/48/000000/youtube-play.png" />  Youtube  </h4> </a>
+                    </li>
+
+                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+
+                        <a href="@Model.Twitch"> <h4 class="text-twitch">  <img src="https://img.icons8.com/color/48/000000/twitch-play.png" />  Twitch  </h4> </a>
+                    </li>
+                </ul>
+            </div>
+
+            <br />
+
+            <div class="">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
+                        <small>Web Design</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Website Markup</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>One Page</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Mobile Template</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small>Backend API</small>
+                        <div class="progress mb-3" style="height: 5px">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-body">
+
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h5 class="mb-0">Ad Soyad </h5>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.namesurname, new { @class = "form-control", disabled="disabled"})
+                                @*<input type="text" asp-for="@Model.namesurname" class="form-control" />*@
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <h5 class="mb-0">Kullanıcı Adı  </h5>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.username, new { @class = "form-control", disabled="disabled"})
+                                @*<input type="text" asp-for="@Model.username" class="form-control" />*@
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <h5 class="mb-0">Email </h5>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.mail, new { @class = "form-control", disabled="disabled"})
+                                @*<input type="email" asp-for="@Model.mail" class="form-control" />*@
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <h5 class="mb-0">Telefon</h5>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", disabled="disabled"})
+                                @*<input type="text" asp-for="@Model.PhoneNumber" class="form-control" />*@
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr>
+                    <!--   parola -->
+
+                    <div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <h5 class="mb-0">Parola</h5>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.password, new { @class = "form-control", disabled="disabled"})
+                                    @*<input type="password" asp-for="@Model.password" class="form-control" />*@
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="row">
+                        <div class="col-sm-3">
+                        <h5 class="mb-0">Parolayı Doğrula</h5>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                        <input type="password" name="PasswordAgain" class="form-control" id="password2" placeholder="Tekrar Giriniz" required="" />
+                        </div>
+                        </div>*@
+                    </div>
+
+                    @* @await Component.InvokeAsync("yazarinhesaplari")*@
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> Github </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Github, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="text" name="@Model.Github" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> Instagram </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Instagram, new { @class = "form-control", disabled="disabled"})
+                            @* <input type="url" name="@Model.Instagram" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> Linkedin </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Linkedin, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="url" name="@Model.Linkedin" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> YouTube </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Youtube, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="url" name="@Model.Youtube" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> Facebook </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="url" name="@Model.Facebook" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> WeChat </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.WeChat, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="url" name="@Model.WeChat" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> Tweteer </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Tweteer, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="url" name="@Model.Tweteer" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> Discord </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Discord, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="url" name="@Model.Discord" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h4 class="mb-0"> Twitch </h4>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            @Html.TextBoxFor(x => x.Twitch, new { @class = "form-control", disabled="disabled"})
+                            @*<input type="url" name="@Model.Twitch" class="form-control" id="Github" placeholder="" />*@
+                        </div>
+                    </div>
+                    <hr>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

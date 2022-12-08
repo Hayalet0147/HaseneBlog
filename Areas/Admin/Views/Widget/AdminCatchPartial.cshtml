@@ -1,0 +1,31 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Catch>
+
+
+    <div class="chat-form">
+       
+            <form method="post">
+                <div class="form-group">
+                    <textarea class="form-control" id="cevapla" name="CatchDetails" placeholder="Message"></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="button" class="btn btn-sm btn-succsess m-t-n-xs"><strong>Sohbete Katıl</strong></button>
+                    <button type="submit" class="btn btn-sm btn-primary m-t-n-xs"><strong>Gönder</strong></button>
+                </div>
+            </form>
+        
+    </div> 
+
+
+@*    <div class="chat-form">
+        @foreach (var item in Model)
+       {
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" name="CatchDetails" placeholder="Message"></textarea>
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-sm btn-primary m-t-n-xs"><strong>Send message</strong></button>
+            </div>
+        </form>
+          }
+    </div>*@

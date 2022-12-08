@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Category>
+@using DataAccsessLayer.Concrete
+
+
+
+<div class="tech-btm">
+    <h4>Kategoriler</h4>
+    <ul class="list-group single">
+        @foreach (var item in Model)
+        {
+           
+    Context c = new Context();
+                var ahey = c.Blogs.Where(x => x.Category.CategorName == item.CategorName).Select(x => x.BlogId).Count();
+                ViewBag.oha = ahey;
+            
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @item.CategorName
+            <span class="badge badge-primary badge-pill"> @ViewBag.oha</span>
+        </li>
+        }
+    </ul>
+</div>
